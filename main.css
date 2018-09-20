@@ -18,17 +18,21 @@ body{
 
 .font-purp{
     color: #50447f  /*36304f #312b49*/; 
+    font-weight: 600;
 }
 
 .font-purp2{
     color:  #50447f /*#5a4d8e*/; 
+    font-weight: 600;
 }
 
 #page-header{
     grid-area: 1/ 1/ 2/ 13;
     display: flex;
     justify-content: space-between;
+    align-content: center;
     height:3rem;
+    padding:0.2rem 0 0.2rem 0;
     background-image: linear-gradient(0deg, #000000, #080808,#1C232B);
 }
 
@@ -43,16 +47,33 @@ body{
 
 #top-nav ul{
     display:flex;
+    margin:0;
 }
 
 #top-nav li{
     list-style: none;
+    margin:0;
 }
 
 .top-nav-a{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height:100%;
+    min-width:fit-content;
+    padding:0 1rem 0 1rem;
     text-decoration: none;
-    color: #b6c4db;
-    margin:0 1rem 0 1rem;
+}
+
+.top-nav-a:hover{
+    
+    padding:0 0.8rem 0 0.8rem;
+    border: 0.2rem solid #36304f;
+}
+
+#top-nav-a-current{
+    color: #50447f;
+    font-weight: 600;
 }
 
 main{
