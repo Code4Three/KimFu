@@ -3,13 +3,25 @@
 body{
     display:grid;
     grid-template-columns:repeat(12,1fr);
+    margin:0;
     background: url("images/push-up-girl.JPG");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
-    margin:0;
 
-    font-family: Lato;
+    font-family: Lato, sans-serif;
+}
+
+.font-blue{
+    color:#b6c4db; 
+}
+
+.font-purp{
+    color: #50447f  /*36304f #312b49*/; 
+}
+
+.font-purp2{
+    color:  #50447f /*#5a4d8e*/; 
 }
 
 #page-header{
@@ -17,25 +29,54 @@ body{
     display: flex;
     justify-content: space-between;
     height:3rem;
-    background-color: #000000;
-    background-blend-mode: hue;
+    background-image: linear-gradient(0deg, #000000, #080808,#1C232B);
 }
 
 #nav-heading{
     margin:0.2rem 1rem 0.2rem 2rem;
-    color: #ffffff;
+    color: #b6c4db;
 }
 
-#main-nav{
+#top-nav{
     display:flex;
 }
 
-#main-nav ul{
+#top-nav ul{
     display:flex;
 }
 
-.main-nav-a{
+#top-nav li{
+    list-style: none;
+}
+
+.top-nav-a{
     text-decoration: none;
-    color: #ffffff;
+    color: #b6c4db;
     margin:0 1rem 0 1rem;
+}
+
+main{
+    display: grid;
+    grid-column: 1/ 13;
+    grid-template-columns: repeat(12,1fr);
+}
+
+#main-tag-line{
+    grid-column: 2/ 7;
+    display: flex;
+    margin-top:33%;
+}
+
+.tag-line {
+    flex-direction: column;
+    margin:0;
+    padding:0;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+}
+
+#behere-tag{
+    margin-top:0.6rem;
+    margin-left:0.1rem;
+    font-weight: 600;
 }
