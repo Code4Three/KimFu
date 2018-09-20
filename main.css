@@ -1,0 +1,41 @@
+/*main CSS*/
+
+body{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    background: url("images/push-up-girl.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    margin:0;
+
+    font-family: Lato;
+}
+
+#page-header{
+    grid-area: 1/ 1/ 2/ 13;
+    display: flex;
+    justify-content: space-between;
+    height:3rem;
+    background-color: #000000;
+    background-blend-mode: hue;
+}
+
+#nav-heading{
+    margin:0.2rem 1rem 0.2rem 2rem;
+    color: #ffffff;
+}
+
+#main-nav{
+    display:flex;
+}
+
+#main-nav ul{
+    display:flex;
+}
+
+.main-nav-a{
+    text-decoration: none;
+    color: #ffffff;
+    margin:0 1rem 0 1rem;
+}
