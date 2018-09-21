@@ -4,19 +4,26 @@
 }
 
 body{
-    display:grid;
-    grid-template-columns:repeat(12,1fr);
     margin:0;
-    background: url("images/push-up-girl.JPG");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: center;
-
     font-family: Lato, sans-serif;
+}
+
+h1{
+    margin:0;
+    color: #b6c4db;
+}
+
+h2{
+    margin:0;
 }
 
 a{
     text-decoration: none;
+}
+
+.sig{
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
 .font-blue{
@@ -34,20 +41,29 @@ a{
 }
 
 #page-header{
-    grid-area: 1/ 1/ 2/ 13;
     display: flex;
+    position:fixed;
     justify-content: space-between;
     align-items: center;
     height:3rem;
+    width:100vw;
     padding:0 0 0 1rem;
     background-color: var(--slack);
     box-shadow:rgba(0, 0, 0, 0.3) 0px 3px 6px, rgba(0, 0, 0, 0.4) 0px 3px 6px;
 }
 
-#nav-heading{
-    margin:0;
-    color: #b6c4db;
+.section-header{
+    grid-column: 1/ 13;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:3rem;
+    margin:0.3rem 0 0 0;
+    padding:0 0 0 1rem;
+    background-color: var(--slack);
+    box-shadow:rgba(0, 0, 0, 0.3) 0px 3px 6px, rgba(0, 0, 0, 0.4) 0px 3px 6px;
 }
+
 
 #top-nav{
     display:flex;
@@ -93,32 +109,58 @@ a{
 
 main{
     display: grid;
-    grid-column: 1/ 13;
     grid-template-columns: repeat(12,1fr);
-
+    width:100%;
 }
 
-#main-tag-line{
-    grid-column: 1/ 7;
+#home{
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-column: 1/ 13;
+    height:100vh;
+    background: url("images/push-up-girl.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+#home-content{
+    grid-column: 3/ 7;
     display: flex;
-    justify-content: flex-end;
-    flex-grow: unset;
-    margin-top:12vw;
+    flex-direction: column;
+    height:6rem;
+    min-width: 15rem;
+    flex-wrap: wrap;
+    margin-top:16vw;
 }
 
 .tag-line {
-    display: flex;
-    justify-items: flex-end;
-    flex-wrap: nowrap;
-    width:1fr;
+    display:flex;
+    height:2rem;
     margin:0;
     padding:0;
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
+    font-size: 1.7rem;
+    letter-spacing: 0.3rem;
 }
 
-#behere-tag{
-    margin-top:1.8rem;
-    margin-left:-2rem;
-    font-weight: 600;
+#tag1{
+    align-self: flex-start;
+    height:4rem;
+    word-wrap: wrap;
+    align-items: flex-end;
+}
+
+#tag2{
+    align-self: flex-end;
+    min-width: 15rem;
+}
+
+#about{
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-column: 1/ 13;
+}
+
+#about-article{
+    grid-column: 4/ 11;
 }
