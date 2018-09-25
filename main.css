@@ -47,21 +47,22 @@ a{
     align-items: center;
     height:3rem;
     width:100vw;
+    z-index: 15;
     padding:0 0 0 1rem;
     background-color: var(--slack);
     box-shadow:rgba(0, 0, 0, 0.3) 0px 3px 6px, rgba(0, 0, 0, 0.4) 0px 3px 6px;
 }
 
 .section-header{
-    grid-column: 1/ 13;
+    grid-column: 2/ 4;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height:3rem;
     margin:0.3rem 0 0 0;
     padding:0 0 0 1rem;
-    background-color: var(--slack);
-    box-shadow:rgba(0, 0, 0, 0.3) 0px 3px 6px, rgba(0, 0, 0, 0.4) 0px 3px 6px;
+    /*background-color: var(--slack);
+    box-shadow:rgba(0, 0, 0, 0.3) 0px 3px 6px, rgba(0, 0, 0, 0.4) 0px 3px 6px;*/
 }
 
 
@@ -110,6 +111,7 @@ a{
 main{
     display: grid;
     grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 43vh 3rem 1fr;
     width:100%;
 }
 
@@ -117,7 +119,11 @@ main{
     display:grid;
     grid-template-columns: repeat(12,1fr);
     grid-column: 1/ 13;
+    grid-row: 1/ 4;
+    position: sticky;
+    top:0;
     height:100vh;
+    min-height: 40vh;
     background: url("images/push-up-girl.JPG");
     background-size: cover;
     background-repeat: no-repeat;
@@ -155,12 +161,35 @@ main{
     min-width: 15rem;
 }
 
+#other-home{
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-column: 1/ 13;
+    grid-row: 1/ 2;
+    position: sticky;
+    top:0;
+    height: 43vh;
+    min-height: 40vh;
+    background: url("images/push-up-girl.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
 #about{
     display:grid;
     grid-template-columns: repeat(12,1fr);
     grid-column: 1/ 13;
+    grid-row: 3/ 4;
+    background-color: #ffffff;
 }
 
 #about-article{
-    grid-column: 4/ 11;
+    grid-column: 3/ 7;
+}
+
+#kim-bike{
+    grid-column: 9/ 11;
+    margin-top: 4rem;
+    width: 100%;
 }
