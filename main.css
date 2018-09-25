@@ -111,18 +111,41 @@ a{
 main{
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 43vh 3rem 1fr;
+    grid-template-rows: 40vh 60vh 1fr;
     width:100%;
 }
+
+.slide-top{
+    position:sticky;
+    grid-column: 1/ 13;
+    grid-row: 1/ 3;
+    top:0;
+    height:40vh;
+    background: url("images/push-up-girl.JPG");
+    background-size: cover;
+    z-index:10;
+  }
+  
+  .slide-bottom{
+    grid-column: 1/ 13;
+    grid-row:2/ 3;
+    position:sticky;
+    top:40vh;
+    height:60vh;
+    z-index:1;
+    background: url("images/push-up-girl.JPG");
+    background-size: cover;
+    background-position: 0 -40vh;
+  }
+  
+  .slider{
+    grid-area:3/ 1/ 4/ 13;
+    z-index:1;
+  }
 
 #home{
     display:grid;
     grid-template-columns: repeat(12,1fr);
-    grid-column: 1/ 13;
-    grid-row: 1/ 4;
-    position: sticky;
-    top:0;
-    height:100vh;
     min-height: 40vh;
     background: url("images/push-up-girl.JPG");
     background-size: cover;
@@ -159,21 +182,6 @@ main{
 #tag2{
     align-self: flex-end;
     min-width: 15rem;
-}
-
-#other-home{
-    display:grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-column: 1/ 13;
-    grid-row: 1/ 2;
-    position: sticky;
-    top:0;
-    height: 43vh;
-    min-height: 40vh;
-    background: url("images/push-up-girl.JPG");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: center;
 }
 
 #about{
