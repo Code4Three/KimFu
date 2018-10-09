@@ -1,14 +1,20 @@
 /*main CSS2*/
 :root{
 --slack:#121212;
+font-size: 18px;
+font-family: Lato, sans-serif;
 }
 
 /**************************************ELEMENTS******************************/
+
+
 body{
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     min-height:100vh;
     margin:0;
-    font-family: Lato, sans-serif;
-    font-size: 17px;
+    padding:0;
 }
 
 h1{
@@ -27,15 +33,39 @@ h2{
     border-bottom: #000000 solid 0.5px;
     font-weight: 200;
     font-size:3rem;
-    
+}
 
+h3{
+    display: inline;
+    margin:0;
+    padding: 0 1rem 0 1rem;
+    border-bottom: #ffffff solid 0.5px;
+    font-size:2rem;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+h4{
+    display: inline;
+    margin:0;
+    padding:0;
+    font-size:0.9rem;
+    font-weight: 300;
+    color: #505050;
 }
 
 a{
     text-decoration: none;
 }
 
-/**************************************MAIN CLASSES**************************/
+.bootcamp-circle p{
+    margin:0;
+    padding:0;
+    font-weight: 700;
+    font-size:2.4rem;
+}
+
+/***********************MAIN CLASSES*********************/
 /*************Base Fonts*****************/
 .sig{
     font-weight: bold;
@@ -56,15 +86,19 @@ a{
     font-weight: 600;
 }
 
+.bootcamp p{
+    color:#ffffff;
+}
+
 /***********************************HEADER********************/
 #page-header{
-    display: flex;
+    grid-area: 1/ 1/ 2/ 13;
     position:fixed;
-    justify-content: space-between;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     height:3rem;
-    width:100vw;
-    z-index: 15;
+    width:100%;
     padding:0 0 0 1rem;
     background-color: var(--slack);
     box-shadow:rgba(0, 0, 0, 0.3) 0px 3px 6px, rgba(0, 0, 0, 0.4) 0px 3px 6px;
@@ -75,7 +109,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height:3rem;
+    height:2.8rem;
     margin:0.3rem 0 0 0;
     padding:0 0 0 1rem;
 }
@@ -84,9 +118,17 @@ a{
 /********************************NAV****************************/
 
 #top-nav{
+    grid-area: 1/ 1/ 2/ 13;
+    position:fixed;
     display:flex;
-    height:2.6rem;
-    margin:0.2rem 2rem 0.2rem 2rem; 
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+    height:2.8rem;
+    width:100%;
+    box-sizing: border-box;
+    margin:0;
+    padding:0.2rem 2rem 0.2rem 2rem; 
 }
 
 #top-nav ul{
@@ -131,22 +173,26 @@ a{
 
 /**********************************BGs*********************************/
 main{
+    grid-row: 1/ 13;
+    grid-column: 1/ 13;
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 1fr;
-    width:100%;
+    grid-template-rows: repeat(12,1fr);
+    height:100%;
+    width:auto;
 }
 
 .std-section{
-    display:grid;
-    grid-row: 1/ 2;
+    grid-row: 1/ 13;
     grid-column: 1/ 13;
+    display:grid;
     grid-template-columns: repeat(12,1fr);
     grid-template-rows: repeat(12,1fr);
-    height:100vh;
+    height:100%;
+    width:auto;
 }
 
-/***********************************HOME PAGE********************************/
+/**************************HOME PAGE*****************************/
 .pug-section{
     background: linear-gradient(
             rgba(10, 10, 10, 0.8), 
@@ -160,13 +206,13 @@ main{
 
 #home-content{
     grid-column: 3/ 7;
-    grid-row: 4/5;
+    grid-row: 4 /5;
     display: flex;
     flex-direction: column;
-    height:6rem;
+    /* height:6rem; */
     min-width: 15rem;
     flex-wrap: wrap;
-    margin-top:0;
+    margin-top:0; 
 }
 
 .tag-line {
@@ -190,22 +236,7 @@ main{
     min-width: 15rem;
 }
 
-#other-home{
-    display:grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-column: 1/ 13;
-    grid-row: 1/ 2;
-    position: sticky;
-    top:0;
-    height: 43vh;
-    min-height: 40vh;
-    background: url("images/push-up-girl.JPG");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: center;
-}
-
-/************************************BOOT CAMPS*******************************/
+/****************************BOOT CAMPS***************************/
 .bootcamp-section{
     background: linear-gradient(
             rgba(0, 0, 0, 0.5), 
@@ -215,17 +246,99 @@ main{
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
+    font-size:1rem;
+}
+
+.article-box{
+    grid-row: 4/ 12;
+    grid-column: 2/ 12;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .bootcamp{
-    grid-row:5/ 11;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 0;
+    margin: 3rem;
+    padding:1rem;
+    border:1px solid black;
+    box-sizing: border-box;
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
+    box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.45);
+    transition: all;
+    transition: cubic-bezier(0, 1.49, 1, 1.18);
+    transition-duration:  300ms;
+}
+
+.bootcamp:hover{
+    transform: scale(1.01);
+    box-shadow: 7.5px 15px 7.5px rgba(0, 0, 0, 0.45);
+    visibility: visible;
+}
+
+.bootcamp-button-wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin:0 0 1rem 0;
+}
+
+.bootcamp a{
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:3rem;
+    width:7rem;
+    transform: scale(0.1);
+    border: 0.12rem solid #50447f;
+    border-radius: 0.17rem;
+    color:#ffffff;
+}
+
+.bootcamp:hover a{
+    visibility: visible;
+    transition: all;
+    transition: cubic-bezier(0, 1.49, 1, 1.18);
+    transition-duration:  300ms;
+    transform: scale(1);
+}
+
+.bootcamp-circle-wrapper{
+    display:flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    height:6rem;
+    width:100%;
+    min-width: 20rem;
+}
+
+.bootcamp-circle{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height:7rem;
+    width: 7rem;
+    box-sizing: border-box;
+    margin:0;
+    padding: 1rem 0 1.6rem 0;
+    border: 0.2rem solid #ffffff;
+    border-radius: 50%;
 }
 
 #bootcamp1{
-    grid-column: 2/ 6;
     background: linear-gradient(
             rgba(0, 0, 0, 0.95), 
             rgba(0, 0, 0, 0.95)
@@ -237,7 +350,6 @@ main{
 }
 
 #bootcamp2{
-    grid-column: 8/ 12;
     background: linear-gradient(
             rgba(0, 0, 0, 0.95), 
             rgba(0, 0, 0, 0.95)
@@ -248,7 +360,7 @@ main{
     background-position-x: center;
 }
 
-/***************************************ABOUT**********************************/
+/******************************ABOUT***************************/
 
 #about{
     display:grid;
@@ -266,4 +378,24 @@ main{
     grid-column: 9/ 11;
     margin-top: 4rem;
     width: 100%;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    :root{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    :root{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    :root{
+        font-size: 10px;
+    }
 }
